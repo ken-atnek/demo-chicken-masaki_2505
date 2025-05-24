@@ -1,0 +1,86 @@
+@use "variable" as *;
+@use "svg" as *;
+.containerFooter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include SunSerif;
+    padding-inline: 2em;
+    background-color: #fff;
+    @include sp {
+        padding-inline: 4vw;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $articleMaxWidth;
+        padding: 5em 0 3em;
+        gap: 2em 0;
+        @include sp {
+            padding: 6vw 0 8vw;
+        }
+        nav {
+            position: relative;
+            font-size: inherit;
+            display: flex;
+            align-items: center;
+            @include sp {
+                flex-direction: column;
+                width: 100%;
+            }
+            .itemLink {
+                position: relative;
+                font-size: FZ(12);
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding: 0.2em 1em;
+                @include sp {
+                    width: 100%;
+                    text-align: center;
+                    padding: 1vw 0;
+                    font-size: 2.8vw;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    height: 100%;
+                    top: 0;
+                    right: 0;
+                    background-color: $base-black;
+                    @include sp {
+                        top: unset;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                    }
+                }
+                &:first-of-type {
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 1px;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        background-color: $base-black;
+                        @include sp {
+                            width: 100%;
+                            height: 1px;
+                        }
+                    }
+                }
+                &.linkTop {
+                    color: #0842af;
+                }
+            }
+        }
+        .copyright {
+            align-self: flex-start;
+            font-size: FZ(12);
+            color: rgb(35 35 35 / 70%);
+        }
+    }
+}

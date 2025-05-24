@@ -1,0 +1,26 @@
+// MAPアイコン
+@mixin svg-icon-map($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 119" fill="%23#{$color}"><path d="M50,0C22.43,0,0,22.19,0,49.46c0,12.54,4.65,24.66,14.21,37.05,7.35,9.53,17.56,19.26,33.09,31.55.79.62,1.74.94,2.7.94s1.91-.31,2.7-.94c24.57-19.44,47.3-41.21,47.3-68.61S77.57,0,50,0ZM50,109.25C28.17,91.7,8.63,72.31,8.63,49.46S27.19,8.54,50,8.54s41.37,18.36,41.37,40.92c0,13.73-5.09,30.48-41.37,59.79Z"/><path d="M50,25.11c-13.58,0-24.62,10.92-24.62,24.35s11.04,24.35,24.62,24.35,24.62-10.92,24.62-24.35-11.04-24.35-24.62-24.35ZM50,65.27c-8.82,0-15.99-7.1-15.99-15.82s7.17-15.82,15.99-15.82,15.99,7.1,15.99,15.82-7.17,15.82-15.99,15.82Z"/></svg>');
+    aspect-ratio: 100/119;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+// メールアイコン
+@mixin svg-icon-mail($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 119 99" fill="%23#{$color}"><path d="M114.73,0H4.27C1.91,0,0,1.91,0,4.27v90.46c0,2.36,1.91,4.27,4.27,4.27h110.46c2.36,0,4.27-1.91,4.27-4.27V4.27c0-2.36-1.91-4.27-4.27-4.27ZM110.46,17.17l-50.96,37.1L8.54,17.17v-8.63h101.93v8.63ZM8.54,27.74l48.45,35.27c.75.54,1.63.82,2.51.82s1.76-.27,2.51-.82l48.45-35.27v62.72H8.54V27.74Z"/></svg>');
+    aspect-ratio: 119/99;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+// スライド矢印
+@mixin svg-slide-arrow($color) {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 67" fill="%23#{$color}"><path d="M34.24,67c-.45,0-.9-.17-1.24-.51L0,33.5,33,.51c.69-.69,1.8-.69,2.48,0s.69,1.8,0,2.48L4.97,33.5l30.52,30.5c.69.69.69,1.8,0,2.48-.34.34-.79.51-1.24.51Z"/></svg>');
+    aspect-ratio: 36/67;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
