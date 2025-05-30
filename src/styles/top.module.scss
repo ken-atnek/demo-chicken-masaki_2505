@@ -1,0 +1,8 @@
+@use "@/styles/variable" as *;
+@use "@/styles/svg" as *;
+
+.blockTop {
+    flex: 1;
+    display: grid;
+    place-content: center;
+}

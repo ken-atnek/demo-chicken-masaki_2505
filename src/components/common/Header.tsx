@@ -1,8 +1,8 @@
 /* =======================================
  * HEADER
  * URL: src/components/common/Header.tsx
- * Created: 2025-04-14
- * Last updated: 2025-04-23
+ * Created: 2025-05-24
+ * Last updated: 2025-05-24
  * ======================================= */
 'use client';
 import styles from '@/styles/components/common/Header.module.scss';

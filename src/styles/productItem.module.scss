@@ -1,0 +1,131 @@
+@use "@/styles/variable" as *;
+@use "@/styles/svg" as *;
+
+.productItem {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 8em;
+    .mainImage {
+        width: 100%;
+        img {
+            width: 100%;
+            max-height: 60rem;
+            aspect-ratio: 2;
+            object-fit: cover;
+        }
+    }
+    .imageGroup {
+        max-width: 98rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-size: inherit;
+        gap: 0 1em;
+        margin-top: 1em;
+        img {
+            font-size: inherit;
+            aspect-ratio: 1.5;
+            object-fit: cover;
+        }
+    }
+
+    article {
+        width: 100%;
+        max-width: 98rem;
+        margin-top: 2em;
+        .catchCopy {
+            font-size: FZ(18);
+            letter-spacing: 0.08em;
+        }
+        h1 {
+            font-size: FZ(24);
+            border-top: 1px solid $base-white;
+            border-bottom: 1px solid $base-white;
+            max-width: 26em;
+            padding-block: 0.5em;
+            margin-top: 0.5em;
+        }
+        .price {
+            font-size: FZ(20);
+            display: inline-flex;
+            align-items: center;
+            gap: 0 0.2em;
+            margin-top: 0.5em;
+            &::before {
+                content: "¥";
+            }
+            &::after {
+                content: "/税込";
+                font-size: 0.6em;
+                padding-top: 0.2em;
+            }
+            span {
+                font-size: 0.8em;
+            }
+        }
+        .description {
+            font-size: FZ(16);
+            margin-top: 0.5em;
+            letter-spacing: 0.12em;
+            line-height: 1.4em;
+            text-align: justify;
+        }
+    }
+    .blockCart {
+        font-size: inherit;
+        display: flex;
+        align-items: center;
+        margin-top: 1em;
+        gap: 0 1em;
+        .quantity {
+            font-size: inherit;
+            display: flex;
+            span {
+                background-color: #fff;
+                color: $base-black;
+                display: grid;
+                place-content: center;
+                border-top: 1px solid #777;
+                border-bottom: 1px solid #777;
+                padding-inline: 1em;
+            }
+            button {
+                display: grid;
+                place-content: center;
+                font-size: FZ(16);
+                background-color: #fff;
+                width: 2em;
+                color: $base-black;
+                padding: 0.5em;
+                aspect-ratio: 1;
+                border: 1px solid #777;
+            }
+        }
+        .subtotal {
+            font-size: FZ(18);
+        }
+        .addToCart {
+            background-color: #c10000;
+            flex: 1;
+            display: grid;
+            align-self: stretch;
+        }
+    }
+    nav {
+        font-size: inherit;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+        div {
+            font-size: inherit;
+            a {
+                font-size: FZ(16);
+            }
+            .linkList {
+                font-size: FZ(16);
+            }
+        }
+    }
+}

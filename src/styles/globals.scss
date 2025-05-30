@@ -1,8 +1,8 @@
 @use "./reset_v2.5" as *;
 @use "./variable" as *;
 body {
-    background-color: #fff;
-    color: $base-black;
+    background-color: $base-black;
+    color: $base-white;
     @include SunSerif;
     font-feature-settings: "palt";
     font-size: clamp(1.2rem, calc($base-vw * 1vw) + calc($slice * 1px), 1.6rem);

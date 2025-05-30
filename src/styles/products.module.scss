@@ -1,0 +1,96 @@
+@use "@/styles/variable" as *;
+@use "@/styles/svg" as *;
+
+.blockHead {
+    position: relative;
+    width: 100%;
+    img {
+        max-height: 80rem;
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 2;
+    }
+
+    h2 {
+        color: rgba($base-white, 0.2);
+        @include aw-conqueror;
+        font-size: 11vw;
+        letter-spacing: 0.5em;
+        text-indent: 0.5em;
+        mix-blend-mode: hard-light;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include sp {
+            font-size: 12vw;
+        }
+    }
+}
+.blockProduct {
+    padding: 5em 4vw 8em;
+    .productList {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        font-size: inherit;
+        gap: 0 3em;
+        & > li {
+            position: relative;
+            background-color: #8c9394;
+            font-size: inherit;
+            padding: 2em;
+            grid-row: span 3;
+            display: grid;
+            grid-template-rows: subgrid;
+            gap: 0.8em 0;
+            img {
+                width: 100%;
+            }
+            .linkItem {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+            .catchCopy {
+                font-size: FZ(18);
+                letter-spacing: 0.04em;
+            }
+            .boxDetail {
+                display: flex;
+                justify-content: space-between;
+                font-size: inherit;
+                align-items: center;
+                border-top: 1px solid $base-white;
+                border-bottom: 1px solid $base-white;
+                padding-block: 1em;
+                .title {
+                    font-weight: 500;
+                    font-size: FZ(21);
+                    letter-spacing: 0.08em;
+                }
+                .price {
+                    font-size: FZ(20);
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 0 0.2em;
+                    &::before {
+                        content: "¥";
+                    }
+                    &::after {
+                        content: "/税込";
+                        font-size: 0.6em;
+                        padding-top: 0.2em;
+                    }
+                    span {
+                        font-size: 0.8em;
+                    }
+                }
+            }
+            &:nth-child(n + 3) {
+                margin-top: 3em;
+            }
+        }
+    }
+}

@@ -30,17 +30,29 @@ $articleMaxWidth: 117rem;
  * フォント設定
  * ------------------------------ */
 
+/* フォント読み込み */
+@font-face {
+    font-display: swap;
+    font-family: aw-conqueror-didot;
+    src: url("./fonts/AWConqueror_Std_Didot.woff2") format("woff2");
+}
+
 /* フォント設定 */
+@mixin aw-conqueror {
+    font-family: aw-conqueror-didot, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 @mixin SunSerif {
     font-family:
-        Jost, "Noto Sans JP", "Helvetica Neue", Arial,
+        "Roboto", "Noto Sans JP", "Helvetica Neue", Arial,
         "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", Meiryo,
         sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* フォント設定 */
 @mixin NotoSansJP {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 400;
@@ -57,10 +69,11 @@ $articleMaxWidth: 117rem;
 /* =================================
  * カラー変数
  * ------------------------------ */
-$base-white: #e3e4eb;
-$base-black: #232323;
-$base-blue: #1ba0fb;
-$dark-blue: #0842af;
+$base-white: #fefefe;
+$base-black: #010101;
+$BaseGray: #8c9394;
+$LightGray: #d6d6d6;
+$BaseGreen: #749d9d;
 
 /* =================================
  * レスポンシブ設定
