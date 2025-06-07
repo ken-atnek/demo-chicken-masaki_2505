@@ -13,6 +13,7 @@ import Link from 'next/link';
 
 type Product = {
   id: string;
+  productClassId: string; // ← 追加
   title: string;
   catchCopy: string;
   price: number;
@@ -34,10 +35,34 @@ export default function ProductDetailClient({
 }: Props) {
   const [quantity, setQuantity] = useState(1);
 
+  // 商品をカートに追加する関数 (フォームを作成してPOSTリクエストを送信する)
+  const handleAddToCart = () => {
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = 'https://demo-shop-chicken-masaki.tuna-pic.co.jp/cart';
+
+    const inputProductClassId = document.createElement('input');
+    inputProductClassId.type = 'hidden';
+    inputProductClassId.name = 'product_class_id';
+    inputProductClassId.value = product.productClassId;
+
+    const inputQuantity = document.createElement('input');
+    inputQuantity.type = 'hidden';
+    inputQuantity.name = 'quantity';
+    inputQuantity.value = quantity.toString();
+
+    form.appendChild(inputProductClassId);
+    form.appendChild(inputQuantity);
+
+    document.body.appendChild(form);
+    form.submit();
+  };
+
+
   return (
     <section className={styles.productItem}>
       <div className={styles.mainImage}>
-        <Image src={product.images[0]} alt={product.title} />
+        <Image src={product.images[0]} alt={product.title} width={600} height={400} unoptimized />
       </div>
       <div className={styles.imageGroup}>
         {product.images.map((img, idx) => (
@@ -45,6 +70,7 @@ export default function ProductDetailClient({
             key={idx}
             src={img}
             alt={`${product.title} 画像${idx + 1}`}
+            width={600} height={400} unoptimized
             style={{ objectFit: 'cover' }}
           />
         ))}
@@ -59,7 +85,7 @@ export default function ProductDetailClient({
         {product.description && (
           <p
             className={styles.description}
-            dangerouslySetInnerHTML={{ __html: product.description }}
+            dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br>') }}
           />
         )}
         <div className={styles.blockCart}>
@@ -73,7 +99,7 @@ export default function ProductDetailClient({
           <p className={styles.subtotal}>
             小計：{(product.price * quantity).toLocaleString()}円
           </p>
-          <button className={styles.addToCart}>カートに入れる</button>
+          <button className={styles.addToCart} onClick={handleAddToCart}>カートに入れる</button>
         </div>
         <nav>
           <div>
