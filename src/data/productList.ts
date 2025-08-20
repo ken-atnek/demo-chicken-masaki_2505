@@ -13,17 +13,18 @@ import { StaticImageData } from "next/image";
 
 export type Product ={
   id:string;
-  images:StaticImageData[];
-  catchCopy:string;
   title:string;
+  catchCopy:string;
+  description?: string;
   price:number;
   unitNote?: string;
-  description?: string;
+  productClassId: string;
+  images:StaticImageData[];
 }
 
 export async function getProductList(): Promise<Product[]> {
-  const res = await fetch('https://demo-shop-chicken-masaki.tuna-pic.co.jp/custom-api/products', {
-    cache: 'no-store',
+  const res = await fetch('https://demo-chicken-masaki.tuna-pic.co.jp/online-shop/custom-api/products', {
+    cache: 'force-cache',
   });
   if (!res.ok) {
     throw new Error('商品一覧の取得に失敗しました');
